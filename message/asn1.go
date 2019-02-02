@@ -632,11 +632,11 @@ func parseTagAndLength(bytes []byte, initOffset int) (ret TagAndLength, offset i
 			}
 			ret.Length <<= 8
 			ret.Length |= int(b)
-			if ret.Length == 0 {
-				// DER requires that lengths be minimal.
-				err = StructuralError{"superfluous leading zeros in length"}
-				return
-			}
+			//if ret.Length == 0 {
+			//	// DER requires that lengths be minimal.
+			//	err = StructuralError{"superfluous leading zeros in length"}
+			//	return
+			//}
 		}
 	}
 
